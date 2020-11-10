@@ -27,7 +27,7 @@ export default function Timer() {
         // Clear timeout if the component is unmounted
         return () => clearTimeout(timer);
     });
-    const timerComponents = [];
+    var timerComponents: any[] = [];
     Object.keys(timeLeft).forEach((interval) => {
         if (!timeLeft[interval]) {
             return;
