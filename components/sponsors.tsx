@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import Carousel from 'react-multi-carousel';
 import { cardsInfo } from '../services/sponsors';
+import CarouselSlider from './common/carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 const responsive = {
@@ -24,6 +24,12 @@ const responsive = {
     }
 }
 
+const carouselElement = cardsInfo && cardsInfo.map(card => <div className="m-5 text-center overflow-hidden" key={card.id}>
+    <div className="inline-block">
+        <img className="h-24" src={card.img} alt={card.title} />
+    </div>
+</div>);
+
 export default function Sponsors() {
     return (
         <div className="m-5 mb-10">
@@ -34,21 +40,7 @@ export default function Sponsors() {
                 </article>
             </div>
             <div>
-                <Carousel swipeable={false}
-                    draggable={true}
-                    responsive={responsive}
-                    ssr={true} // means to render carousel on server-side.
-                    infinite={true}
-                    autoPlaySpeed={1000}
-                    transitionDuration={500}
-                    removeArrowOnDeviceType={["tablet", "mobile"]}
-                >
-                    {cardsInfo && cardsInfo.map(card => <div className="m-5 text-center overflow-hidden" key={card.id}>
-                        <div className="inline-block">
-                            <img className="h-24" src={card.img} alt={card.title} />
-                        </div>
-                    </div>)}
-                </Carousel>
+                <CarouselSlider responsive={responsive} element={carouselElement} dots={false} removeArrow={["tablet", "mobile"]} />
             </div>
         </div>
   );
