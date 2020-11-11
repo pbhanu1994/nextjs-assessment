@@ -1,28 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { cardsInfo } from '../services/speakers';
+import { cardsInfo, responsive } from '../services/speakers';
 import CarouselSlider from './common/carousel';
 import 'react-multi-carousel/lib/styles.css';
-
-const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 4
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 3
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
-    }
-}
 
 const carouselElement = cardsInfo && cardsInfo.map(card => <div className="max-w-lg w-full lg:max-w-full lg:flex shadow-lg mr-5" key={card.id}>
     <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" title="Woman holding a mug">

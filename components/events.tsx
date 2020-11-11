@@ -1,27 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { cardsInfo } from '../services/events';
+import { cardsInfo, responsive } from '../services/events';
 import CarouselSlider from './common/carousel';
-
-const responsive = {
-    superLargeDesktop: {
-        // the naming can be any, depends on you.
-        breakpoint: { max: 4000, min: 3000 },
-        items: 5
-    },
-    desktop: {
-        breakpoint: { max: 3000, min: 1024 },
-        items: 4
-    },
-    tablet: {
-        breakpoint: { max: 1024, min: 464 },
-        items: 2
-    },
-    mobile: {
-        breakpoint: { max: 464, min: 0 },
-        items: 1
-    }
-}
 
 const carouselElement = cardsInfo && cardsInfo.map(card => (<div className="bg-gray-100 rounded overflow-hidden shadow-md mr-5 mb-5" key={card.id}><img className="w-full h-32 sm:h-48 object-cover" src={card.img} alt={card.title} />
     <div className="m-4">
