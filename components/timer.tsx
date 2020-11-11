@@ -34,7 +34,7 @@ export default function Timer() {
         }
 
         timerComponents.push(
-            <div>
+            <div key={interval}>
                 <article className="prose lg:prose-xl">
                     <h1 className="pr-10 mb-0" style={{ marginBottom: 0 }}>{timeLeft[interval]} {" "}</h1>
                     <p className="text-sm capitalize">{interval}</p>

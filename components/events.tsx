@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Carousel from 'react-multi-carousel';
+import { cardsInfo } from '../services/events';
 import 'react-multi-carousel/lib/styles.css';
 
 const responsive = {
@@ -22,12 +23,7 @@ const responsive = {
         items: 1
     }
 }
-const cardInfo = [
-    { id: 1, title: 'Keynote', name: 'Athanasia Loukadi', img: './img/events/keynote.jpg' },
-    { id: 2, title: 'Workshops', name: 'Stoiximan/Betano', img: './img/events/workshops.jpg' },
-    { id: 3, title: 'Masterclass', name: 'Benjamin', img: './img/events/masterclass.jpg' },
-    { id: 4, title: 'Chat', name: 'Louise', img: './img/events/chat.jpg' },
-];
+
 export default function Events() {
     return (
         <div className="m-5 mt-10 mb-10">
@@ -46,7 +42,7 @@ export default function Events() {
                     autoPlaySpeed={1000}
                     transitionDuration={500}
                 >
-                    {cardInfo.map(card => <div className="bg-gray-100 rounded overflow-hidden shadow-md mr-5 mb-5" key={card.id}><img className="w-full h-32 sm:h-48 object-cover" src={card.img} alt={card.title} />
+                    {cardsInfo && cardsInfo.map(card => <div className="bg-gray-100 rounded overflow-hidden shadow-md mr-5 mb-5" key={card.id}><img className="w-full h-32 sm:h-48 object-cover" src={card.img} alt={card.title} />
                         <div className="m-4">
                             <article className="prose lg:prose-xl">
                                 <p className="font-bold text-center" style={{ marginBottom: 0}}>{card.title}</p>

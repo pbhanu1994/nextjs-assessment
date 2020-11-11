@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Carousel from 'react-multi-carousel';
+import { cardsInfo } from '../services/team';
 import 'react-multi-carousel/lib/styles.css';
 
 const responsive = {
@@ -22,12 +23,7 @@ const responsive = {
         items: 1
     }
 }
-const cardInfo = [
-    { id: 1, title: 'Amy Weiss', name: 'Event Manager', img: './img/team/1.jpg' },
-    { id: 2, title: 'James Travis', name: 'Head of Production', img: './img/team/2.jpg' },
-    { id: 3, title: 'Sharon Filler', name: 'Admin & Legal', img: './img/team/3.jpg' },
-    { id: 3, title: 'Bruce Nolan', name: 'Chief Editor', img: './img/team/4.jpg' },
-];
+
 export default function Team() {
     return (
         <div className="m-5 mb-10">
@@ -47,7 +43,7 @@ export default function Team() {
                     transitionDuration={500}
                     removeArrowOnDeviceType={["tablet", "mobile"]}
                 >
-                    {cardInfo.map(card => <div className="max-w-lg w-full lg:max-w-full lg:flex shadow-lg mr-5">
+                    {cardsInfo && cardsInfo.map(card => <div className="max-w-lg w-full lg:max-w-full lg:flex shadow-lg mr-5" key={card.id}>
                         <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" title="Woman holding a mug">
                             <img className="w-full h-32 sm:h-48 object-cover" src={card.img} alt={card.title} />
                         </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Carousel from 'react-multi-carousel';
+import { cardsInfo } from '../services/speakers';
 import 'react-multi-carousel/lib/styles.css';
 
 const responsive = {
@@ -22,12 +23,7 @@ const responsive = {
         items: 1
     }
 }
-const cardInfo = [
-    { id: 1, title: 'Vyokko Arro', name: 'Monzo Bank', img: './img/speakers/1.jpg' },
-    { id: 2, title: 'Geoffery Lillemon', name: 'Geoffery Lillemon Studio', img: './img/speakers/2.jpg' },
-    { id: 3, title: 'Matthew Goode', name: 'Matthew Creative Goods', img: './img/speakers/3.jpg' },
-    { id: 3, title: 'Lillian Andrews', name: 'Andrew Studio', img: './img/speakers/4.jpg' },
-];
+
 export default function Speakers() {
     return (
         <div className="m-5 mb-10">
@@ -46,7 +42,7 @@ export default function Speakers() {
                     autoPlaySpeed={1000}
                     transitionDuration={500}
                 >
-                    {cardInfo.map(card => <div className="max-w-lg w-full lg:max-w-full lg:flex shadow-lg mr-5">
+                    {cardsInfo && cardsInfo.map(card => <div className="max-w-lg w-full lg:max-w-full lg:flex shadow-lg mr-5" key={card.id}>
                         <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" title="Woman holding a mug">
                             <img className="w-full h-32 sm:h-48 object-cover" src={card.img} alt={card.title} />
                         </div>
