@@ -12,7 +12,7 @@ interface CarouselSliderProps {
 const CarouselSlider: React.SFC<CarouselSliderProps> = ({ responsive, element, dots, removeArrow }) => {
   return (
       <Carousel
-            swipeable={false}
+            swipeable={true}
             draggable={true}
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.

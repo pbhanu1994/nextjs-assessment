@@ -14,7 +14,7 @@ export default function Posts() {
                 </article>
             </div>
             <div>
-                <Carousel swipeable={false}
+                <Carousel swipeable={true}
                     draggable={true}
                     responsive={responsive}
                     ssr={true} // means to render carousel on server-side.
